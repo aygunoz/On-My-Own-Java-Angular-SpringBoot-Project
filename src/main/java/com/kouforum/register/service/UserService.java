@@ -1,10 +1,16 @@
 package com.kouforum.register.service;
 
-import com.kouforum.register.entity.User;
-import org.springframework.data.domain.Page;
+import com.kouforum.register.dto.UserDto;
+import com.kouforum.register.util.TPage;
 import org.springframework.data.domain.Pageable;
 
 public interface UserService {
 
-    Page<User> getAllPageable(Pageable pageable);
+    UserDto save(UserDto user);
+
+    UserDto getById(Long id);
+
+    TPage<UserDto> getAllPageable(Pageable pageable);
+
+    UserDto getByUsername(String username);
 }
